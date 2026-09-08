@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="background-color: #0F172A; color: #F8FAFC;">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="description" content="Scam Sentry — On-device payment fraud detector. Scan screenshots, QR codes, and messages to detect scams instantly." />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
+    <!-- Google Fonts Preconnect and Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <title>Scam Sentry</title>
+  </head>
+  <body class="bg-[#0F172A] text-[#F8FAFC] antialiased" style="margin: 0; background-color: #0F172A; color: #F8FAFC; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+    <div id="root">
+      <!-- Fallback Loading State Before React Mounts -->
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #0F172A; color: #F8FAFC; padding: 1.5rem; text-align: center; box-sizing: border-box;">
+        <style>
+          @keyframes sentry-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+          @keyframes sentry-pulse {
+            0%, 100% { opacity: 0.35; transform: scale(0.92); }
+            50% { opacity: 0.85; transform: scale(1.08); }
+          }
+          .sentry-spinner-ring {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.08);
+            border-top-color: #3b82f6;
+            border-right-color: #8B5CF6;
+            animation: sentry-spin 1s linear infinite;
+            box-shadow: 0 0 24px rgba(59, 130, 246, 0.35);
+          }
+        </style>
+        <div style="position: relative; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+          <div style="position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(139, 92, 246, 0.12) 60%, transparent 80%); animation: sentry-pulse 2s ease-in-out infinite;"></div>
+          <div class="sentry-spinner-ring"></div>
+          <div style="position: absolute; width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #8B5CF6); box-shadow: 0 0 10px #3b82f6;"></div>
+        </div>
+        <div style="font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: linear-gradient(135deg, #F8FAFC 30%, #94A3B8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.35rem;">
+          Scam Sentry
+        </div>
+        <div style="font-size: 0.82rem; color: #94A3B8; letter-spacing: 0.02em;">
+          Securing environment...
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
